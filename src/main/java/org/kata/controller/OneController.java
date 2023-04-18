@@ -41,17 +41,17 @@ public class OneController {
         return "redirect:/";
 
     }
-    @GetMapping("/{id}/edit")// ?
+    @GetMapping("/{id}/edit")// +
     public String edit(Model model, @PathVariable("id")Long id) {
         model.addAttribute("user", userService.getUserById(id));
-        return "/edit";
+        return "edit";
     }
     @GetMapping("views/{id}")//+
     public String find(@PathVariable("id") Long id, Model model) {
         model.addAttribute("user", userService.getUserById(id));
-        return "/findUser";
+        return "findUser";//
     }
-    @PatchMapping("/view/{id}")//?
+    @PatchMapping("/{id}")//?
     public String update(@ModelAttribute("user") User user) {
         userService.updateUser(user);
         return "redirect:/";

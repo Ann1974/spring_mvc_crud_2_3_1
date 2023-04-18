@@ -28,9 +28,9 @@
            <form th:method="DELETE" th:action="@{{id}(id=${user.getId()})}">
             <input type="submit" value="УДАЛИТЬ">
            </form>
-           <form><a th:href="@{edit(id=${user.getId()})}">
+           <a th:href="@{{id}/edit(id=${user.getId()})}">
             <button>РЕДАКТИРОВАТЬ</button></a>
-           </form>
+
     </td>
     <td>
     </td>

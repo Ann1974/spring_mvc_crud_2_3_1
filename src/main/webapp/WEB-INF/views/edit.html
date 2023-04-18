@@ -5,7 +5,7 @@
   <title>Редактировать список пользователей</title>
 </head>
 <body>
-<form th:method="patch" th:action="@{(id=${user.getId()})}" th:object="${user}">
+<form th:method="patch" th:action="@{/{id}((id=${user.getId()})}" th:object="${user}">
   <label for="id">ID</label>
   <input readonly type="number" th:field="*{id}" id="id" placeholder="id">
   <br/>
@@ -15,10 +15,9 @@
   <br/>
   <label for="last_name">Фамилия</label>
   <input type="text" th:field="*{lastName}" id="last_Name">
-  <div style="color:#d7b714" th:if="${#fields.hasErrors('last_name')}" th:errors="*{lastName}">Фамилия ошибка</div>
+  <div style="color:#d7b714" th:if="${#fields.hasErrors('lastName')}" th:errors="*{lastName}">lastName Error</div>
   <br/>
-  <br/>
-  <input type="submit" value="ОБНОВИТЕ СПИСОК ПОЛЬЗОВАТЕЛЕЙ">
+  <input type="submit" value="Обновить пользователя"/>
 </form>
 </body>
 </html>
