@@ -4,26 +4,19 @@
   <meta charset="UTF-8">
   <title>Пользователь</title>
 </head>
-<body>
-<p>Найти пользователя</p>
-<table>
-  <tr>
-
-    <td>Id</td>
-    <td th:text="${user.getId()}">ID</td>
-
+<body  bgcolor="#afeeee">
+<h1>Найти пользователя</p></h1>
+<table class ="italic">
+  <tr  border="1" bgcolor="#f0f8ff">
+    <th bgcolor="#ffd700"><h2>Id</h2></th>
+    <th><h2>Имя</h2></th>
+    <th><h2>Фамилия</h2></th>
   </tr>
   <tr>
-
-    <td>Имя</td>
-    <td th:text="${user.getName()}">Имя</td>
-
+    <h3 ><td bgcolor="#ffd700" th:text="${user.getId()}">ID</td></h3>
+    <h3><td bgcolor="#f0f8ff"  th:text="${user.getName()}">Имя</td></h3>
+    <h3><td bgcolor="#f0f8ff" th:text="${user.getLastName()}">Фамилия</td></h3>
   </tr>
-  <tr>
-
-    <td>Фамилия</td>
-    <td th:text="${user.getLastName()}">Фамилия</td>
-
 </table>
 <br>
 <form action="/">
