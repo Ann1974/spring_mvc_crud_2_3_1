@@ -4,20 +4,29 @@
   <meta charset="UTF-8">
   <title>Редактировать список пользователей</title>
 </head>
-<body>
-<form th:method="patch" th:action="@{/{id}((id=${user.getId()})}" th:object="${user}">
-  <label for="id">ID</label>
-  <input readonly type="number" th:field="*{id}" id="id" placeholder="id">
+<body bgcolor="#afeeee">
+<table class ="italic">
+<h1>Изменение данных</h1>
+  <tr>
+    <form th:method="patch" th:action="@{/{id}((id=${user.getId()})}" th:object="${user}">
+       <td bgcolor="#ffd700">
+         <label for="id"><h3>ID</h3></label>
+         <input readonly type="number" th:field="*{id}" id="id" placeholder="id">
+       </td>
+      <td bgcolor="#f0f8ff">
+        <label for="name"><h3>Имя</h3></label><input type="text" th:field="*{name}" id="name"/>
+        <div th:if="${#fields.hasErrors('name')}" th:errors="*{name}">Name error</div>
+      </td>
+       <td bgcolor="#f0f8ff">
+          <label for="last_name"><h3>Фамилия</h3></label><input type="text" th:field="*{lastName}" id="last_Name">
+          <div th:if="${#fields.hasErrors('lastName')}" th:errors="*{lastName}">lastName error</div>
+       </td>
+      <br/>
+      <input type="submit" value="ОБНОВИТЬ ПОЛЬЗОВАТЕЛЯ"/>
+    </form>
+  </tr>
   <br/>
-  <label for="name">Имя</label>
-  <input type="text" th:field="*{name}" id="name"/>
-  <div style="color:#d7b714" th:if="${#fields.hasErrors('name')}" th:errors="*{name}">Name Error</div>
-  <br/>
-  <label for="last_name">Фамилия</label>
-  <input type="text" th:field="*{lastName}" id="last_Name">
-  <div style="color:#d7b714" th:if="${#fields.hasErrors('lastName')}" th:errors="*{lastName}">lastName Error</div>
-  <br/>
-  <input type="submit" value="Обновить пользователя"/>
-</form>
+</table>
+
 </body>
 </html>
